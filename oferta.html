@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6dbe0085e5.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Oferta biura</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Rajskie Tripy </a>
+    <input type="checkbox" id="nav-btn" class="nav-btn"/>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Strona Główna</a></li> 
+            <li><a href='oferta.html'><i class="fas fa-lightbulb"></i> Oferta</a></li>
+            <li><a href='kontakt.html'><i class="fas fa-mobile-alt"></i> Kontakt</a></li>
+            <li><a href='promki.html'><i class="fas fa-percentage"></i> Promocje</a></li>
+        </ul>
+    
+</nav>
+<label for="nav-btn" class="nav-btn-label">
+</label>
+</header>
+    <div id="slider">
+        <div class="container">
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="bali.jpg" style="width:100%;" alt="bali">
+              <div class="text" style="text-align: center;"><div style="color: red;text-decoration: line-through; display: inline;">3000zł</div>   2499zł</div>
+            </div>
+          
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="bora.jpg" style="width:100%" alt="bora">
+              <div class="text" style="text-align: center;"><div style="color: red;text-decoration: line-through; display: inline;">5299zł</div>   3499zł</div>
+            </div>
+          
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="maledivy.jpg" style="width:100%" alt="malediwy">
+              <div class="text" style="text-align: center;"><div style="color: red;text-decoration: line-through; display: inline;">4099zł</div>   2999zł</div>
+            </div>
+              
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="dominikana.jpg" style="width:100%" alt="dominikana">
+              <div class="text" style="text-align: center;"><div style="color: red;text-decoration: line-through; display: inline;">6900zł</div>   5999zł</div>
+            </div>
+          
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="barbados.jpg" style="width:100%" alt="barbados">
+              <div class="text" style="text-align: center;"><div style="color: red;text-decoration: line-through; display: inline;">5999zł</div>   2199zł</div>
+            </div>
+              
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="aruba.jpg" style="width:100%;" alt="aruba">
+              <div class="text" style="text-align: center;">7000zł</div>
+            </div>
+              
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+          
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+          
+            <div class="row">
+              <div class="column">
+                <img class="demo cursor" src="bali.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(1)" alt="Bali">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="bora.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(2)" alt="Bora Bora">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="maledivy.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(3)" alt="Malediwy">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="dominikana.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(4)" alt="Dominikana">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="barbados.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(5)" alt="Barbados">
+              </div>    
+              <div class="column">
+                <img class="demo cursor" src="aruba.jpg" style="width:100%; border: 2px solid black" onclick="currentSlide(6)" alt="Aruba">
+              </div>
+            </div>
+          </div>
+          
+          <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+          }
+          </script>
+
+    </div>
+    <footer>
+        <span class="stopka">
+            Copyright &copy; Bartek Bujnarowski Rajskie Tripy
+        </span>
+    </footer>
+</body>
+</html>

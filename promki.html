@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promocje</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6dbe0085e5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body{
+            height: 130vh;
+        }
+    #promka{
+        width: 60%;
+        text-align: center;
+        font-size: 120%;
+        float: right;
+        margin-right: 50px;
+        margin-top: 20vh;
+    }
+    
+
+    #promka img{
+        width: 75%;
+        border: 1px solid dodgerblue;
+        border-radius: 5px;
+        margin-top: 2vh;
+    }
+
+    #promka p{
+        font-style: italic;
+        font-weight: 400;
+        font-size: 120%;
+    }
+
+    .mniejsza{
+        color: red;
+        text-decoration: line-through;
+        font-size: 80%;
+    }
+
+    .wieksza{
+        color: dodgerblue;
+        font-weight: bold;
+        font-size: 130%;
+        padding-top: 10vh;
+        text-shadow: 0px 0px 0px white;
+    }
+
+
+    .inneprom{
+        width: 50%;
+        height: 25vh;
+        margin-top: 2vh;
+        margin-left: 2%;
+        text-align: center;
+    }
+
+    .zdjprom{
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid dodgerblue;
+    }
+
+
+    #polewej{
+        float: left;
+        width: 30%;
+        margin-left: 100px;
+    }
+    main{
+        width: 100%;
+    }
+    h1{
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Rajskie Tripy </a>
+    <input type="checkbox" id="nav-btn" class="nav-btn"/>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Strona Główna</a></li> 
+            <li><a href='oferta.html'><i class="fas fa-lightbulb"></i> Oferta</a></li>
+            <li><a href='kontakt.html'><i class="fas fa-mobile-alt"></i> Kontakt</a></li>
+            <li><a href='promki.html'><i class="fas fa-percentage"></i> Promocje</a></li>
+        </ul>
+    
+    </nav>
+    <label for="nav-btn" class="nav-btn-label">
+    </label>
+    </header>
+    <main>
+        <div id="polewej">
+            <h1>Dostępne promocje</h1>
+            <div class="inneprom">
+                <img src="maledivy.jpg" alt="Malediwy" class="zdjprom" id="promka1">
+                <p id="miejsce1">Malediwy</p>
+                <p><span class="mniejsza" id="mn1">4099zł</span> <span class="wieksza" id="wk1">2999zł</span></p>
+            </div>
+            
+            <div class="inneprom">
+                <img src="dominikana.jpg" alt="dominikana" class="zdjprom" id="promka2">
+                <p id="miejsce2">Dominikana</p>
+                <p><span class="mniejsza" id="mn2">6900zł</span> <span class="wieksza" id="w2">5999zł</span></p>
+            </div>
+            <div class="inneprom">
+                <img src="bora.jpg" alt="bora" class="zdjprom" id="promka3">
+                <p id="miejsce3">Bora Bora</p>
+                <p><span class="mniejsza" id="mn3">5299zł</span> <span class="wieksza" id="wk3">3499zł</span></p>
+            </div>
+                
+            <div class="inneprom">
+                <img src="barbados.jpg" alt="barbados" class="zdjprom" id="promka4">
+                <p id="miejsce4">Barbados</p>
+                <p><span class="mniejsza" id="m4">5999zł</span> <span class="wieksza" id="wk4">2199zł</span></p>
+            </div>
+        </div>
+        <div id="promka">
+            <h1>Wyróżniona Promocja:</h1>
+            <img src="bali.jpg" alt="promocja" id="promkajpg">
+            <p id="miejsce">Bali</p>
+            <p><span class="mniejsza" id="mn">3000zł</span> <span class="wieksza" id="wk">2499zł</span></p>
+        </div>
+    </main>
+    <script>
+        window.onload = rotate;
+
+        var promocje = new Array("bali.jpg","maledivy.jpg","dominikana.jpg","bora.jpg","barbados.jpg");
+
+        function rotate(){
+            var losowa = Math.floor(Math.random()*promocje.length);
+            losowa--;
+            
+            if(losowa==0){
+                document.getElementById("promkajpg").src = promocje[losowa];
+                document.getElementById("miejsce").innerHTML = "Bali";
+                document.getElementById("mn").innerHTML = "3000zł";
+                document.getElementById("wk").innerHTML = "2499zł";
+            }
+            else if(losowa==1){
+                document.getElementById("promkajpg").src = promocje[losowa];
+                document.getElementById("miejsce").innerHTML = "Malediwy";
+                document.getElementById("mn").innerHTML = "4099zł";
+                document.getElementById("wk").innerHTML = "2999zł";
+            }
+            else if(losowa==2){
+                document.getElementById("promkajpg").src = promocje[losowa];
+                document.getElementById("miejsce").innerHTML = "Dominikana";
+                document.getElementById("mn").innerHTML = "6900zł";
+                document.getElementById("wk").innerHTML = "5999zł";
+            }
+            else if(losowa==3){
+                document.getElementById("promkajpg").src = promocje[losowa];
+                document.getElementById("miejsce").innerHTML = "Bora";
+                document.getElementById("mn").innerHTML = "5299zł";
+                document.getElementById("wk").innerHTML = "3499zł";
+            }
+            else if(losowa==4){
+                document.getElementById("promkajpg").src = promocje[losowa];
+                document.getElementById("miejsce").innerHTML = "Barbados";
+                document.getElementById("mn").innerHTML = "5999zł";
+                document.getElementById("wk").innerHTML = "2199zł";
+            }
+            
+    
+    
+        setTimeout("rotate()",4000);
+        }
+    </script>
+    <footer>
+        <span class="stopka">
+            Copyright &copy; Bartek Bujnarowski Rajskie Tripy
+        </span>
+    </footer>
+</body>
+</html>

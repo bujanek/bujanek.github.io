@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    height: 130vh;
+    color: dodgerblue;
+}
+.logo{
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+/* NAWIGACJA */
+alink, vlink, a, link{
+    text-decoration: none;
+    color: dodgerblue;
+}
+.menu li{
+    list-style: none;
+    list-style-image: none;
+    display: inline;
+}
+nav{
+    float: right;
+}
+.nav-btn-label{
+    display: none;
+}
+header{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    height: 50px;
+    font-weight: bold;
+    top: 0;
+    border-bottom: 4px solid dodgerblue;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.logo{
+    grid-column: 2 / 3;
+    font-size: 40px;
+    position: relative;
+}
+nav{
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li{
+    margin-left: 3em;
+    margin-bottom: 0;
+    list-style-type: none;
+    font-size: 12px;
+}
+nav a{
+    opacity: 1;
+    position: relative;
+    
+}
+
+nav a::before{
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: dodgerblue;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0,1);
+    transition: transform ease-in-out .25s;
+}
+nav a:hover::before{
+    transform: scale(1,1);
+}
+input{
+    display: none;
+}
+
+/* */
+
+
+
+
+/* SLIDER */
+#slider{
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    padding-top: 20px;
+}
+img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+/* KONTAKT */
+
+#kontakt{
+    border-top: 4px solid dodgerblue;
+    color: dodgerblue;
+    font-size: 15px;
+    padding-top: 20px;
+}
+.klewo{
+    float: left;
+    text-align: center;
+    margin-left: 20px;
+}
+#kontakt ul{
+    display: block;
+    list-style: none;
+}
+.kprawo{
+    float: right;
+    text-align: center;
+    margin-right: 10px;
+}
+.time{
+    clear: both;
+}
+#czas{
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 30px;
+    float: left;
+    margin-left: 20px;
+}
+.przerwa{
+    clear: both;
+    height: 5vh;
+    border-bottom: 4px solid dodgerblue;
+}
+#odliczanie{
+    float: right;
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 20px;
+}
+#social{
+    clear: both;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20px;
+    color: dodgerblue;
+}
+#social i{
+    margin-left: 10px;
+}
+
+/* Stopka */
+footer{
+    border-top: 4px solid dodgerblue; 
+    clear: both;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 3vh;
+    background-color: dodgerblue;
+}
+.stopka{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}

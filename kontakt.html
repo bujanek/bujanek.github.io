@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6dbe0085e5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Kontakt</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        main input{
+            display: block;
+        }
+        .containerK{
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .containerK:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        
+        .contact-box{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .field{
+            width: 100%;
+            border: 2px solid dodgerblue;
+            outline: none;
+            background-color: white;
+            padding: 0.5rem 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+            transition: .3s;
+        }
+        
+        .field:focus{
+            border: 2px solid rgba(30, 144, 250, 0.47);
+            background-color: white;
+        }
+        
+        .btn{
+            
+            padding: 0.5rem 1rem;
+            background-color: black;
+            color: dodgerblue;
+            font-size: 1.1rem;
+            border: 1px solid dodgerblue;
+            outline: none;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .btn:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Rajskie Tripy </a>
+        <input type="checkbox" id="nav-btn" class="nav-btn"/>
+        <nav>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Strona Główna</a></li> 
+            <li><a href='oferta.html'><i class="fas fa-lightbulb"></i> Oferta</a></li>
+            <li><a href='kontakt.html'><i class="fas fa-mobile-alt"></i> Kontakt</a></li>
+            <li><a href='promki.html'><i class="fas fa-percentage"></i> Promocje</a></li>
+        </ul>
+    
+        </nav>
+        <label for="nav-btn" class="nav-btn-label">
+        </label>
+    </header>
+    <main>
+        <div class="containerK">
+        <div class="contact-box">
+            <div class="right">
+                <h2>KONTAKT</h2>
+                <form>
+                <input type="text" class="field" id="imie" placeholder="IMIĘ" onblur="sprawdz1()" required>
+                <input type="email" class="field" id="mail" placeholder="E-MAIL" onblur="sprawdz2()" required>
+                <input type="text" class="field" id="telefon" placeholder="TELEFON" onblur="sprawdz3()" required>
+                <input type="date" class="field" required>
+                <input type="number" class="field" placeholder="DŁUGOŚĆ WYJAZDU" required>
+                <textarea placeholder="UWAGI" class="field"></textarea>
+                <button class="btn" type="submit">WYŚLIJ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var wzorimie = /^[A-Z]{1}[a-z]+$/;
+        var wzormail = /^\w+[@]\w+\.[a-zA-Z]{2,3}$/;
+        var wzortelefon1 = /^\d{9}$/;
+
+        function sprawdz1(){
+            var imie = document.getElementById("imie").value;
+            if(wzorimie.test(imie) == false){
+                alert("Źle wpisałeś imię!");
+                document.getElementById("imie").value = null;
+            }
+        }
+
+        function sprawdz2(){
+            var mail = document.getElementById("mail").value;
+            if(wzormail.test(mail) == false){
+                alert("Źle wpisałeś email!");
+                document.getElementById("email").value = null;
+            }
+        }
+
+        function sprawdz3(){
+            var telefon = document.getElementById("telefon").value;
+            if(wzortelefon1.test(telefon) == false){
+                alert("Źle wpisałeś telefon!");
+                document.getElementById("telefon").value = null;
+            }
+        }
+    </script>
+    </main>
+    <footer>
+        <span class="stopka">
+            Copyright &copy; Bartek Bujnarowski Rajskie Tripy
+        </span>
+    </footer>
+</body>
+</html>

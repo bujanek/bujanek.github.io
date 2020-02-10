@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rajskie Tripy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6dbe0085e5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+    </style>        
+</head>
+<body>
+    <header>
+                <a href="index.html" class="logo">Rajskie Tripy </a>
+            <input type="checkbox" id="nav-btn" class="nav-btn"/>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Strona Główna</a></li> 
+                    <li><a href='oferta.html'><i class="fas fa-lightbulb"></i> Oferta</a></li>
+                    <li><a href='kontakt.html'><i class="fas fa-mobile-alt"></i> Kontakt</a></li>
+                    <li><a href='promki.html'><i class="fas fa-percentage"></i> Promocje</a></li>
+                </ul>
+            
+        </nav>
+        <label for="nav-btn" class="nav-btn-label">
+        </label>
+    </header>
+    <main>
+        <div id="slider">
+            <h2 style="text-align: center; font-size: 30px;">Poznaj nasze oferty</h2>
+
+            <div class="slideshow-container">
+
+            <div class="mySlides fade">
+            <a href="oferta.html"><img src="bali.jpg" style="width:100%" alt="bali"></a>
+            </div>
+
+            <div class="mySlides fade">
+            <a href="oferta.html"><img src="maledivy.jpg" style="width:100%" alt="malediwy"></a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="oferta.html"><img src="dominikana.jpg" style="width:100%" alt="dominikana"></a>
+            </div>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+
+        <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+        </script>
+        </div>
+        <div id="kontakt">
+            <div class="klewo">
+                <h2>+48 000 000 000 lub +48 111 111 111</h2>
+                
+                <h3>Telefoniczne centrum rezerwacji <i class="fas fa-phone"></i>:</h3>
+                <ul>
+                    <li>Poniedziałek- Piątek 9:00- 18:00</li>
+                    <li>Sobota 10:00- 14:00</li>
+                </ul>
+            </div>
+            <div class="kprawo">
+                <h2>+48 222 222 222 lub +48 333 333 333</h2>
+                
+                <h3>Telefoniczne biuro obsługi <i class="fas fa-phone"></i>:</h3>
+                <ul>
+                    <li>Poniedziałek- Piątek 9:00- 18:00</li>
+                    <li>Sobota 10:00- 14:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="przerwa"></div>
+        <div class="time">
+            <div id="czas"></div>
+            <div id="odliczanie"></div>
+        </div>
+        <div class="przerwa"></div> 
+        <div id="social">
+            <p class="s">Wejdź i poznaj nas</p>
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com"><i class="fab fa-youtube-square"></i></a>
+        </div>
+    </main>
+    <footer>
+        <span class="stopka">
+            Copyright &copy; Bartek Bujnarowski Rajskie Tripy
+        </span>
+    </footer>
+    <script>
+        function data(){
+                var teraz= new Date();
+                var godz= teraz.getHours();
+                var min= teraz.getMinutes();
+                var sec= teraz.getSeconds();
+                if(sec<10) sec= '0'+sec;
+                if(min<10) min= '0'+min;
+                if(godz<10) godz= '0'+godz;
+                document.getElementById('czas').innerHTML= "Aktualna godzina "+ godz +":"+ min +":"+ sec +"<br/>";
+        }
+        setInterval('data()',1000);
+        
+        function odlicz(){
+            var urodz = new Date("June 26, 2020");
+            var now = new Date();
+            var ile = urodz.getTime() - now.getTime();
+            var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+            document.getElementById('odliczanie').innerHTML= "Do wakacji zostały "+ dni +" dni<br/>";
+        }
+        setInterval('odlicz()',1000);
+    </script>
+</body>
+</html>
